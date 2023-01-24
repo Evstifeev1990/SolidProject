@@ -1,4 +1,4 @@
-package Сalendar.Model.Model;
+package Сalendar.Model;
 
 import java.util.ArrayList;
 import javax.swing.text.View;

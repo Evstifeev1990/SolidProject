@@ -1,10 +1,11 @@
 package Сalendar.Controller;
 
 import java.util.ArrayList;
+
 import Сalendar.Class.Day;
 import Сalendar.Class.InfoText;
 import Сalendar.Class.NewDiary.MenuDiary;
-import Сalendar.Model.Model.Model;
+import Сalendar.Model.Model;
 
 public class Controller {
 

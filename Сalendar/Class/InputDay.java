@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import Сalendar.Class.NewDiary.MenuDiary;
 
 public class InputDay {
-    public MenuDiary inputDay () throws FileNotFoundException, IOException, ClassNotFoundException {
-        
+    public ArrayList<Day> inputDay() throws FileNotFoundException, IOException, ClassNotFoundException {
+
         ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("Calendar.out"));
-        MenuDiary diary = new MenuDiary();
+        ArrayList<Day> days = new ArrayList<>();
         Day Monday = (Day) objectInputStream.readObject();
         Day Tuesday = (Day) objectInputStream.readObject();
         Day Wednesday = (Day) objectInputStream.readObject();
@@ -22,37 +22,31 @@ public class InputDay {
         Day Friday = (Day) objectInputStream.readObject();
         Day Saturday = (Day) objectInputStream.readObject();
         Day Sunday = (Day) objectInputStream.readObject();
-        // ArrayList<Day> res = menuDiary.getMenuDay();
-        // ArrayList<Day> saveDay = new ArrayList<>();
-        // for(Day day:res) {  
-        //     day = (Day) objectInputStream.readObject();
-        //     saveDay.add(day);
-        // }
-        diary.add(Monday);
-        diary.add(Tuesday);
-        diary.add(Wednesday);
-        diary.add(Thursday);
-        diary.add(Friday);
-        diary.add(Saturday);
-        diary.add(Sunday);
+        days.add(Monday);
+        days.add(Tuesday);
+        days.add(Wednesday);
+        days.add(Thursday);
+        days.add(Friday);
+        days.add(Saturday);
+        days.add(Sunday);
         objectInputStream.close();
-        
-        return diary;      
+        return days;
     }
 
+    public MenuDiary inputDay1(MenuDiary menuDiary, ByteArrayOutputStream byteArrayOutputStream)
+            throws FileNotFoundException, IOException, ClassNotFoundException {
 
-    public MenuDiary inputDay1 (MenuDiary menuDiary, ByteArrayOutputStream byteArrayOutputStream ) throws FileNotFoundException, IOException, ClassNotFoundException {
-        
-        ObjectInputStream objectInputStream2 = new ObjectInputStream(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()));
+        ObjectInputStream objectInputStream2 = new ObjectInputStream(
+                new ByteArrayInputStream(byteArrayOutputStream.toByteArray()));
         ArrayList<Day> res = menuDiary.getMenuDay();
         ArrayList<Day> saveDay = new ArrayList<>();
-        for(Day day:res) {  
+        for (Day day : res) {
             day = (Day) objectInputStream2.readObject();
             saveDay.add(day);
         }
         objectInputStream2.close();
         menuDiary.setDays(saveDay);
-        return menuDiary;        
-    }  
+        return menuDiary;
+    }
 
 }

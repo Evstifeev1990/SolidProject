@@ -30,23 +30,16 @@ public class Model {
         return diary;
     }
 
-    public Day readAddInfo(ArrayList<Day> days, InfoText info) {
-        Day day1 = new Day(null, null);
-        for (Day day : days) {
-            ArrayList<InfoText> inf = day.getInfo();
-            if (inf == null) {
-                inf = new ArrayList<>();
-                inf.add(info);
-                day.setInfo(inf);
-                day1 = day;
-            } else {
-                inf.add(info);
-                day.setInfo(inf);
-                day1 = day;
-            }
-
+    public Day readAddInfo(Day day, InfoText info) {
+        ArrayList<InfoText> inf = day.getInfo();
+        if (inf == null) {
+            inf = new ArrayList<>();
+            inf.add(info);
+            day.setInfo(inf);
+        } else {
+            inf.add(info);
+            day.setInfo(inf);
         }
-        return day1;
-
+        return day;
     }
 }

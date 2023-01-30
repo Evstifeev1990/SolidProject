@@ -11,16 +11,12 @@ import Сalendar.Class.NewDiary.MenuDiary;
 
 public class Save {
     
-    public void saveDay (MenuDiary menuDiary) throws FileNotFoundException, IOException {
+    public void saveDay (ArrayList<Day> day1) throws FileNotFoundException, IOException {
         System.out.println("\n" + "Записи успешно сохранены.");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("Calendar.out"));
-        ArrayList<Day> res = menuDiary.getMenuDay();
-        
-        for(Day day:res) {
-            System.out.println(day);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("Calendar.out"));  
+        for(Day day:day1) {
             objectOutputStream.writeObject(day);    
-        }
-        
+        }    
         objectOutputStream.close();       
     }
     

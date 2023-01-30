@@ -1,7 +1,6 @@
 package Сalendar.Class.NewDiary;
 
 import java.util.ArrayList;
-
 import Сalendar.Class.Day;
 import Сalendar.Class.InfoText;
 

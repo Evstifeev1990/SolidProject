@@ -2,9 +2,8 @@ package Сalendar.Class;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.function.ToDoubleBiFunction;
 
-public class Day implements Serializable{
+public class Day implements Serializable {
     private String name;
     private ArrayList<InfoText> info;
 
@@ -31,10 +30,7 @@ public class Day implements Serializable{
 
     @Override
     public String toString() {
-        
         return name;
     }
-
-
 
 }

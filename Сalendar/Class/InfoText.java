@@ -1,6 +1,8 @@
 package Сalendar.Class;
 
-public class InfoText {
+import java.io.Serializable;
+
+public class InfoText implements Serializable {
     String info;
 
     public InfoText(String info) {

@@ -4,7 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import Сalendar.Class.Day;
 import Сalendar.Class.InfoText;
 import Сalendar.Class.InputDay;
@@ -23,27 +22,25 @@ public class Controller {
         return model.newAddCalendar();
     }
 
-    public Day readAddInfo(ArrayList<Day> days, InfoText info) {
-        return model.readAddInfo(days, info);
+    public Day readAddInfo(Day day, InfoText info) {
+        return model.readAddInfo(day, info);
     }
 
-    
-
-    public void save (MenuDiary menuDiary) throws FileNotFoundException, IOException {
-        save.saveDay(menuDiary);
+    public void save(ArrayList<Day> day1) throws FileNotFoundException, IOException {
+        save.saveDay(day1);
     }
 
-    public ByteArrayOutputStream save1 (MenuDiary menuDiary) throws FileNotFoundException, IOException {
+    public ByteArrayOutputStream save1(MenuDiary menuDiary) throws FileNotFoundException, IOException {
         return save.saveDay1(menuDiary);
     }
 
-    public MenuDiary inputDay () throws FileNotFoundException, IOException, ClassNotFoundException {
+    public ArrayList<Day> inputDay() throws FileNotFoundException, IOException, ClassNotFoundException {
         return inputDay.inputDay();
     }
-    
-    public MenuDiary inputDay1 (MenuDiary menuDiary, ByteArrayOutputStream byteArrayOutputStream) throws FileNotFoundException, IOException, ClassNotFoundException {
+
+    public MenuDiary inputDay1(MenuDiary menuDiary, ByteArrayOutputStream byteArrayOutputStream)
+            throws FileNotFoundException, IOException, ClassNotFoundException {
         return inputDay.inputDay1(menuDiary, byteArrayOutputStream);
     }
-
 
 }

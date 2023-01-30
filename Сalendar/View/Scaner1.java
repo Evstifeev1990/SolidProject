@@ -7,7 +7,7 @@ public class Scaner1 {
     Scanner sc = new Scanner(System.in);
 
     public Integer numberDay() {
-        System.out.println("Выберите день: " + "\n" + "8 - выход.");
+        System.out.println("8 - выход." + "\n" + "Выберите день: ");
         Integer number = sc.nextInt();
         return number;
     }

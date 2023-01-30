@@ -1,9 +1,10 @@
 package Сalendar.Class.NewDiary;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import Сalendar.Class.Day;
 
-public class MenuDiary extends NewDiary {
+public class MenuDiary extends NewDiary  {
 
     public ArrayList<String> getMenu() {
         ArrayList<String> res = new ArrayList<>();
@@ -20,5 +21,8 @@ public class MenuDiary extends NewDiary {
         }
         return res;
     }
+
+    
+    
 
 }

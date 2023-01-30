@@ -9,7 +9,7 @@ import Сalendar.View.Scaner1;
 
 public class Model {
     Scaner1 scaner;
-    View view;;
+    View view;
 
     public MenuDiary newAddCalendar() {
         MenuDiary diary = new MenuDiary();
@@ -30,19 +30,23 @@ public class Model {
         return diary;
     }
 
-    public void readAddInfo(ArrayList<Day> days, InfoText info) {
+    public Day readAddInfo(ArrayList<Day> days, InfoText info) {
+        Day day1 = new Day(null, null);
         for (Day day : days) {
             ArrayList<InfoText> inf = day.getInfo();
             if (inf == null) {
                 inf = new ArrayList<>();
                 inf.add(info);
                 day.setInfo(inf);
+                day1 = day;
             } else {
                 inf.add(info);
                 day.setInfo(inf);
+                day1 = day;
             }
 
         }
+        return day1;
 
     }
 }

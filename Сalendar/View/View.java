@@ -30,6 +30,18 @@ public class View extends Scaner1 {
         return days;
     }
 
+    public MenuDiary addInfoMenuView(MenuDiary diary, Day day) {
+        ArrayList<Day> days = new ArrayList<>();
+        for (Day day1 : diary.getMenuDay()) {
+            if ((day1.getName()).equals(day.getName())) {
+                day1 = day;
+            }
+            days.add(day1);
+        }
+        diary.setDays(days);
+        return diary;
+    }
+
     public void getStringDay(ArrayList<Day> day) {
         for (Day day2 : day) {
             System.out.println();
